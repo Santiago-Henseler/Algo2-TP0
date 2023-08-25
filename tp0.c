@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 
+//defino las constantes
+#define COMA ';'
+
 enum TIPO { NORMAL, FUEGO, AGUA, PLANTA, ELECTRICO, ROCA };
 
 struct ataque {
@@ -10,11 +13,78 @@ struct ataque {
 	unsigned int poder;
 };
 
-struct ataque *parsear_ataque(char *texto, struct ataque *ataque)
-{
-	//completar esta función según lo pedido en el enunciado
+void definir_nombre(char *texto, int tope, char nombre[]){
 
-	return NULL;
+    for(int i = 0; i < tope; i++){
+        nombre[i] = texto[i];
+    }
+    
+}
+
+int definir_poder(char *texto, int i, int tope){
+
+    char aux[tope-i];
+
+    int k = 0;
+
+    for(i; i < tope; i++){
+        aux[k] = texto[i];
+        k++;
+    }
+
+    int rta = atoi(aux);
+
+    return rta;
+}
+
+enum TIPO definir_tipo(char texto){
+
+    enum TIPO tipo = -1;
+
+    if(texto == 'N'){
+        tipo = NORMAL;
+    }else if(texto == 'F'){
+        tipo = FUEGO;
+    }else if(texto == 'A'){
+        tipo = AGUA;
+    }else if(texto ==  'P'){
+        tipo = PLANTA;
+    }else if(texto == 'E'){
+        tipo = ELECTRICO;
+    }else if(texto == 'R'){
+        tipo = ROCA;
+    }
+
+    return tipo;
+}
+
+struct ataque *parsear_ataque(char *texto, struct ataque *ataque){
+	
+    int tope = (int)strlen(texto);
+    int separaciones = 0;
+
+    for(int i = 0;i < tope && separaciones < 2; i++){
+
+        if(texto[i] == COMA && separaciones == 0){
+            definir_nombre(texto, i, ataque->nombre);
+            separaciones++;
+        }else if(texto[i] == COMA && separaciones == 1){
+
+            ataque->tipo = definir_tipo(texto[i-1]);
+
+            ataque->poder = definir_poder(texto, i+1, tope);
+
+            separaciones++;
+        }
+
+    }
+
+    if(strlen(ataque->nombre) < 1 || ataque->poder < 1 || ataque->tipo < 0){
+        return NULL;
+    }else{
+        return ataque;
+    }
+
 }
 
 int main()
