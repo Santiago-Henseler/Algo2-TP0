@@ -4,21 +4,7 @@
 
 # TP0
 
-## Repositorio de (Nombre Apellido) - (Padrón) - (Mail)
-
-- Para compilar:
-
-```bash
-gcc tp0.c -o tp0
-```
-
-- Para ejecutar:
-
-```bash
-./tp0
-```
-
----
+## Repositorio de Santiago Henseler - 110732 - shenseler@fi.uba.ar
 
 ##  Enunciado
 
@@ -29,7 +15,6 @@ En esta oportunidad el objetivo del trabajo es lograr parsear un string y llenar
 ### Tipos de ataque
 La segunda parte del string contiene un caracter que debe ser convertido a un tipo de ataque según la siguiente tabla:
 
-
 | Caracter  | Tipo |
 | --- | --- |
 | N  | NORMAL |
@@ -38,17 +23,3 @@ La segunda parte del string contiene un caracter que debe ser convertido a un ti
 | P  | PLANTA |
 | E  | ELECTRICO |
 | R  | ROCA |
-
-## Entrega
-
-Existe un [video con instrucciones para la elaboración y entrega de tps](https://www.youtube.com/watch?v=9FcpACxkiNI), pero básicamente el procedimiento se reduce a:
-
-- Crear un repositorio (privado) a partir de este repositorio template.
-- Clonar el repositorio para poder trabajar.
-- Crear un branch nuevo donde se realizarán los cambios.
-- Implementar la funcionalidad pedida.
-- Completar este Readme con tus datos.
-- Realizar uno o mas commits con los cambios pedidos.
-- Crear un pull request con los cambios.
-- Enviar la url del pull request por mail según las indicaciones en Discord.
-
