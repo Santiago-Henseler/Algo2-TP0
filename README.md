@@ -1,10 +1,5 @@
-<div align="right">
-<img width="32px" src="img/algo2.svg">
-</div>
 
 # TP0
-
-## Repositorio de Santiago Henseler - 110732 - shenseler@fi.uba.ar
 
 ##  Enunciado
 
